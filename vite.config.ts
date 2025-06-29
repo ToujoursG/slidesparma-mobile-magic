@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/slidesparma-mobile-magic/",
+  base: "/slidesparma-mobile-magic/"
   server: {
     host: "::",
     port: 8080,
