@@ -1,12 +1,12 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WelcomeScreen from '../components/WelcomeScreen';
 import MainMenu from '../components/MainMenu';
 import ProductDetail from '../components/ProductDetail';
 import Cart from '../components/Cart';
 import Checkout from '../components/Checkout';
+import FavoritesScreen from '../components/FavoritesScreen';
 
-export type Screen = 'welcome' | 'menu' | 'product' | 'cart' | 'checkout';
+export type Screen = 'welcome' | 'menu' | 'product' | 'cart' | 'checkout' | 'favorites';
 
 export interface Product {
   id: number;
@@ -27,6 +27,19 @@ const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [favorites, setFavorites] = useState<number[]>([]);
+
+  // Load favorites from localStorage on component mount
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem('slidesparma-favorites');
+    if (savedFavorites) {
+      setFavorites(JSON.parse(savedFavorites));
+    }
+  }, []);
+
+  // Save favorites to localStorage whenever favorites change
+  useEffect(() => {
+    localStorage.setItem('slidesparma-favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   const products: Product[] = [
     {
@@ -142,6 +155,7 @@ const Index = () => {
           onProductSelect={handleProductSelect}
           onToggleFavorite={toggleFavorite}
           onCartClick={() => setCurrentScreen('cart')}
+          onFavoritesClick={() => setCurrentScreen('favorites')}
           cartItemsCount={getTotalItems()}
         />
       );
@@ -174,6 +188,19 @@ const Index = () => {
           }}
           onCheckout={() => setCurrentScreen('checkout')}
           totalPrice={getTotalPrice()}
+        />
+      );
+    
+    case 'favorites':
+      return (
+        <FavoritesScreen
+          products={products}
+          favorites={favorites}
+          onBack={() => setCurrentScreen('menu')}
+          onProductSelect={handleProductSelect}
+          onToggleFavorite={toggleFavorite}
+          onCartClick={() => setCurrentScreen('cart')}
+          cartItemsCount={getTotalItems()}
         />
       );
     

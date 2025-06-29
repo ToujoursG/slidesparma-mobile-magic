@@ -11,6 +11,7 @@ interface MainMenuProps {
   onProductSelect: (product: Product) => void;
   onToggleFavorite: (productId: number) => void;
   onCartClick: () => void;
+  onFavoritesClick: () => void;
   cartItemsCount: number;
 }
 
@@ -19,7 +20,8 @@ const MainMenu = ({
   favorites, 
   onProductSelect, 
   onToggleFavorite, 
-  onCartClick, 
+  onCartClick,
+  onFavoritesClick,
   cartItemsCount 
 }: MainMenuProps) => {
   const [activeCategory, setActiveCategory] = useState<'business' | 'education' | 'creative'>('business');
@@ -64,7 +66,18 @@ const MainMenu = ({
     <div className="min-h-screen bg-slate-900 text-white">
       {/* Header */}
       <div className="bg-slate-800 p-4 lg:px-8">
-        <h1 className="text-2xl lg:text-3xl font-bold mb-4">SlidesParma</h1>
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-2xl lg:text-3xl font-bold">SlidesParma</h1>
+          {favorites.length > 0 && (
+            <button
+              onClick={onFavoritesClick}
+              className="flex items-center space-x-2 px-3 py-2 bg-red-500 hover:bg-red-600 rounded-lg transition-colors"
+            >
+              <Heart className="w-4 h-4" />
+              <span className="text-sm font-medium">{favorites.length}</span>
+            </button>
+          )}
+        </div>
         
         {/* Search Bar */}
         <div className="relative">
@@ -204,8 +217,16 @@ const MainMenu = ({
           <button className="flex flex-col items-center p-2">
             <Home className="w-6 h-6 text-red-500" />
           </button>
-          <button className="flex flex-col items-center p-2">
-            <Heart className="w-6 h-6 text-gray-400" />
+          <button 
+            onClick={onFavoritesClick}
+            className="flex flex-col items-center p-2 relative"
+          >
+            <Heart className={`w-6 h-6 ${favorites.length > 0 ? 'text-red-500' : 'text-gray-400'}`} />
+            {favorites.length > 0 && (
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {favorites.length}
+              </span>
+            )}
           </button>
           <button 
             onClick={onCartClick}
