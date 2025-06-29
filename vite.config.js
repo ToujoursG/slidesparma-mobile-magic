@@ -1,4 +1,9 @@
-export default defineConfig(({ mode }) => ({
+const path = require("path");
+const { defineConfig } = require("vite");
+const react = require("@vitejs/plugin-react-swc").default;
+const { componentTagger } = require("lovable-tagger");
+
+module.exports = defineConfig(({ mode }) => ({
   base: "/slidesparma-mobile-magic/",
   server: {
     host: "::",
