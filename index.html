@@ -1,24 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>slidesparma-mobile-magic</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="slidesparma-mobile-magic" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlidesParma - Melhor serviço de slides do mundo!</title>
+    <meta name="description" content="Os melhores templates, designs incríveis, avaliações 5 estrelas.">
+    <meta name="author" content="SlidesParma">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SlidesParma - Melhor serviço de slides do mundo!">
+    <meta property="og:description" content="Os melhores templates, designs incríveis, avaliações 5 estrelas.">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="hero-section">
+            <div class="hero-images">
+                <div class="hero-image-circle">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=150&h=150&fit=crop&crop=center" alt="Dashboard Analytics">
+                </div>
+                <div class="hero-image-circle">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=150&h=150&fit=crop&crop=center" alt="Business Meeting">
+                </div>
+                <div class="hero-image-circle">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=center" alt="Presentation Design">
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <h1>Melhor serviço de slides<br>do mundo!</h1>
+                <p>Os melhores templates, designs incríveis, avaliações 5 estrelas.</p>
+                <button class="cta-button" id="next-button">NEXT</button>
+            </div>
+            
+            <div class="hero-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Application Page -->
+    <div id="main-page" class="page">
+        <header class="header">
+            <div class="logo">SlidesParma</div>
+            <div class="search-container">
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <!-- Free Slides Banner -->
+            <section class="free-slides-banner">
+                <div class="banner-content">
+                    <h2>Slides Grátis</h2>
+                    <p>1 + 1 = 1</p>
+                </div>
+                <div class="banner-action">
+                    <button class="order-button">Pedir Agora</button>
+                    <div class="banner-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=80&h=80&fit=crop&crop=center" alt="Free Slides">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Categories -->
+            <section class="categories-section">
+                <h3>Categorias</h3>
+                <div class="categories-tabs">
+                    <button class="category-tab active" data-category="business">💼 Business</button>
+                    <button class="category-tab" data-category="education">🎓 Education</button>
+                    <button class="category-tab" data-category="creative">🎨 Creative</button>
+                </div>
+            </section>
+            
+            <!-- Products Grid -->
+            <section class="products-grid">
+                <!-- Business Pro -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop&crop=center" alt="Business Pro Dashboard">
+                        <button class="favorite-btn">♡</button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Business Pro</h4>
+                        <p>Apresentações profissionais para negócios</p>
+                        <div class="product-footer">
+                            <span class="price">$29.99</span>
+                            <button class="details-btn">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Corporate Elite -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&crop=center" alt="Corporate Elite Meeting">
+                        <button class="favorite-btn">♡</button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Corporate Elite</h4>
+                        <p>Templates corporativos premium</p>
+                        <div class="product-footer">
+                            <span class="price">$39.99</span>
+                            <button class="details-btn">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Startup Pitch -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=center" alt="Startup Pitch">
+                        <button class="favorite-btn">♡</button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Startup Pitch</h4>
+                        <p>Apresentações para startups</p>
+                        <div class="product-footer">
+                            <span class="price">$44.99</span>
+                            <button class="details-btn">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active">
+                <span class="nav-icon">🏠</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">🛒</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">💚</span>
+            </button>
+        </nav>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
 </html>
+
