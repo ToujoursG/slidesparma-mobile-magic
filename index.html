@@ -11,111 +11,81 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="spinner"></div>
-        <p>Carregando SlidesParma...</p>
-    </div>
-
-    <!-- Toast Container -->
-    <div id="toast-container" class="toast-container"></div>
-
     <!-- Landing Page -->
     <div id="landing-page" class="page active">
-        <div class="hero-section">
-            <div class="hero-images">
-                <div class="hero-image-circle">
+        <div class="landing-container">
+            <div class="hero-circles">
+                <div class="hero-circle">
                     <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=400&fit=crop&crop=center" alt="Business Templates">
                 </div>
-                <div class="hero-image-circle">
+                <div class="hero-circle">
                     <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=400&fit=crop&crop=center" alt="Education Templates">
                 </div>
-                <div class="hero-image-circle">
+                <div class="hero-circle">
                     <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=400&fit=crop&crop=center" alt="Creative Templates">
                 </div>
             </div>
-            <div class="hero-content">
+            <div class="hero-content-box">
                 <h1>Templates Profissionais para Apresentações</h1>
                 <p>Descubra nossa coleção exclusiva de templates premium para PowerPoint e Google Slides. Designs modernos, profissionais e totalmente personalizáveis.</p>
-                <button id="next-button" class="cta-button">Explorar Templates</button>
-            </div>
-            <div class="hero-dots">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+                <button id="start-btn" class="red-button">Explorar Templates</button>
             </div>
         </div>
     </div>
 
-    <!-- Main Application -->
+    <!-- Main Page -->
     <div id="main-page" class="page">
-        <!-- Header -->
         <header class="header">
-            <button id="back-from-main" class="back-button hidden">‹</button>
-            <div class="logo">SlidesParma</div>
+            <button id="back-btn" class="back-arrow">←</button>
+            <h1 class="header-title">SlidesParma</h1>
             <div class="search-container">
-                <input type="text" id="search-input" class="search-input" placeholder="Buscar templates...">
-                <button class="search-btn">🔍</button>
+                <input type="text" id="search-input" placeholder="Buscar templates..." class="search-input">
             </div>
-            <button id="clear-search" class="clear-btn hidden">✕</button>
         </header>
 
-        <!-- Main Content -->
         <main class="main-content">
-            <!-- Free Slides Banner -->
-            <div class="free-slides-banner">
-                <div class="banner-content">
+            <div class="promo-banner">
+                <div class="banner-text">
                     <h2>Templates Gratuitos</h2>
                     <p>Baixe alguns templates gratuitos para testar nossa qualidade</p>
                 </div>
-                <div class="banner-action">
-                    <button class="order-button">Baixar Grátis</button>
+                <div class="banner-right">
+                    <button class="banner-btn">Baixar Grátis</button>
                     <div class="banner-image">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=100&h=100&fit=crop&crop=center" alt="Free Templates">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=100&h=100&fit=crop&crop=center" alt="Free">
                     </div>
                 </div>
             </div>
 
-            <!-- Categories -->
-            <section class="categories-section">
+            <div class="categories">
                 <h3>Categorias</h3>
-                <div class="categories-tabs">
-                    <button class="category-tab active" data-category="all">
-                        📊 Todos
-                    </button>
-                    <button class="category-tab" data-category="business">
-                        💼 Negócios
-                    </button>
-                    <button class="category-tab" data-category="education">
-                        🎓 Educação
-                    </button>
-                    <button class="category-tab" data-category="creative">
-                        🎨 Criativo
-                    </button>
+                <div class="category-pills">
+                    <button class="pill active" data-category="all">📊 Todos</button>
+                    <button class="pill" data-category="business">💼 Negócios</button>
+                    <button class="pill" data-category="education">🎓 Educação</button>
+                    <button class="pill" data-category="creative">🎨 Criativo</button>
                 </div>
-            </section>
+            </div>
 
-            <!-- Products Grid -->
             <div id="products-grid" class="products-grid">
-                <!-- Products will be loaded here by JavaScript -->
+                <!-- Products will be loaded here -->
             </div>
         </main>
 
-        <!-- Bottom Navigation -->
         <nav class="bottom-nav">
-            <button class="nav-item active" data-nav="home">
-                <div class="nav-icon">🏠</div>
-                <div class="nav-label">Início</div>
+            <button class="nav-btn active" data-nav="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Início</span>
             </button>
-            <button class="nav-item" data-nav="cart">
-                <div class="nav-icon">🛒</div>
-                <div class="nav-label">Carrinho</div>
-                <div class="cart-count">0</div>
+            <button class="nav-btn" data-nav="cart">
+                <span class="nav-icon">🛒</span>
+                <span class="nav-label">Carrinho</span>
+                <span class="cart-badge">0</span>
             </button>
-            <button class="nav-item" data-nav="favorites">
-                <div class="nav-icon">❤️</div>
-                <div class="nav-label">Favoritos</div>
-                <div class="favorites-count">0</div>
+            <button class="nav-btn" data-nav="favorites">
+                <span class="nav-icon">❤️</span>
+                <span class="nav-label">Favoritos</span>
+                <span class="fav-badge">0</span>
             </button>
         </nav>
     </div>
@@ -123,62 +93,45 @@
     <!-- Product Details Page -->
     <div id="product-page" class="page">
         <header class="header">
-            <button id="back-from-product" class="back-button">‹</button>
-            <div class="logo">Detalhes do Produto</div>
-            <button id="product-favorite-btn" class="favorite-toggle">♡</button>
+            <button id="back-from-product" class="back-arrow">←</button>
+            <h1 class="header-title">Detalhes</h1>
+            <button id="fav-toggle" class="fav-heart">♡</button>
         </header>
 
-        <div class="product-details">
-            <div class="product-gallery">
-                <img id="product-main-image" class="main-image" src="" alt="">
-                <div class="image-thumbnails">
-                    <img class="thumbnail active" src="" alt="">
-                    <img class="thumbnail" src="" alt="">
-                    <img class="thumbnail" src="" alt="">
-                </div>
+        <div class="product-detail-content">
+            <div class="product-image-main">
+                <img id="main-product-image" src="" alt="" class="main-image">
+            </div>
+            
+            <div class="product-thumbnails">
+                <img class="thumb active" src="" alt="">
+                <img class="thumb" src="" alt="">
+                <img class="thumb" src="" alt="">
             </div>
 
-            <div class="product-info">
-                <h1 id="product-title">Título do Produto</h1>
-                <p id="product-description">Descrição do produto</p>
+            <div class="product-info-section">
+                <h1 id="product-name">Nome do Produto</h1>
+                <p id="product-desc">Descrição do produto</p>
 
-                <div class="product-features">
-                    <h3>Características</h3>
-                    <ul id="product-features-list">
-                        <!-- Features will be loaded here -->
-                    </ul>
+                <div class="size-options">
+                    <button class="size-btn active">20 cm</button>
+                    <button class="size-btn">30 cm</button>
+                    <button class="size-btn">40 cm</button>
                 </div>
 
-                <div class="product-pricing">
-                    <span id="product-price" class="price">$0.00</span>
-                    <span class="original-price">$0.00</span>
+                <div class="quantity-selector">
+                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <span class="qty-display" id="qty">1</span>
+                    <button class="qty-btn" onclick="changeQty(1)">+</button>
                 </div>
 
-                <div class="product-actions">
-                    <button id="add-to-cart-btn" class="add-to-cart-btn">
-                        <span class="btn-icon">🛒</span>
-                        Adicionar ao Carrinho
-                    </button>
-                    <button id="buy-now-btn" class="buy-now-btn">
-                        <span class="btn-icon">⚡</span>
-                        Comprar Agora
-                    </button>
+                <div class="price-section">
+                    <span class="price" id="product-price">$0.00</span>
                 </div>
 
-                <div class="product-guarantee">
-                    <div class="guarantee-item">
-                        <span class="guarantee-icon">✓</span>
-                        <span>Garantia de 30 dias</span>
-                    </div>
-                    <div class="guarantee-item">
-                        <span class="guarantee-icon">✓</span>
-                        <span>Download imediato</span>
-                    </div>
-                    <div class="guarantee-item">
-                        <span class="guarantee-icon">✓</span>
-                        <span>Suporte técnico incluído</span>
-                    </div>
-                </div>
+                <button id="add-to-cart" class="add-cart-btn">
+                    ADICIONAR AO CARRINHO
+                </button>
             </div>
         </div>
     </div>
@@ -186,39 +139,30 @@
     <!-- Cart Page -->
     <div id="cart-page" class="page">
         <header class="header">
-            <button id="back-from-cart" class="back-button">‹</button>
-            <div class="logo">Meu Carrinho</div>
-            <button id="clear-cart-btn" class="clear-btn">🗑️</button>
+            <button id="back-from-cart" class="back-arrow">←</button>
+            <h1 class="header-title">Meu Carrinho</h1>
+            <button id="clear-cart" class="clear-btn">🗑️</button>
         </header>
 
         <div class="cart-content">
-            <div id="cart-items" class="cart-items">
+            <div id="cart-items-container">
                 <!-- Cart items will be loaded here -->
             </div>
 
-            <div id="empty-cart" class="empty-state">
+            <div id="empty-cart-state" class="empty-state">
                 <div class="empty-icon">🛒</div>
                 <h3>Seu carrinho está vazio</h3>
-                <p>Adicione alguns templates incríveis ao seu carrinho</p>
-                <button class="continue-shopping-btn">Continuar Comprando</button>
+                <p>Adicione alguns templates incríveis</p>
+                <button class="continue-btn">Continuar Comprando</button>
             </div>
 
-            <div id="cart-summary" class="cart-summary" style="display: none;">
-                <div class="summary-row">
-                    <span>Subtotal:</span>
-                    <span id="cart-subtotal">$0.00</span>
-                </div>
-                <div class="summary-row">
-                    <span>Desconto (10%):</span>
-                    <span id="cart-discount">-$0.00</span>
-                </div>
-                <div class="summary-row total">
-                    <span>Total:</span>
-                    <span id="cart-total">$0.00</span>
-                </div>
-                <button id="checkout-btn" class="checkout-btn">
-                    <span class="btn-icon">💳</span>
-                    Finalizar Compra
+            <div class="delivery-form">
+                <h3>Delivery</h3>
+                <input type="text" placeholder="Name" class="form-input">
+                <input type="text" placeholder="Delivery address" class="form-input">
+                <input type="tel" placeholder="Phone number" class="form-input">
+                <button id="payment-btn" class="payment-btn">
+                    MAKE PAYMENT | $0.00
                 </button>
             </div>
         </div>
@@ -227,62 +171,21 @@
     <!-- Favorites Page -->
     <div id="favorites-page" class="page">
         <header class="header">
-            <button id="back-from-favorites" class="back-button">‹</button>
-            <div class="logo">Meus Favoritos</div>
-            <button id="clear-favorites-btn" class="clear-btn">🗑️</button>
+            <button id="back-from-favorites" class="back-arrow">←</button>
+            <h1 class="header-title">Favoritos</h1>
+            <button id="clear-favorites" class="clear-btn">🗑️</button>
         </header>
 
-        <div class="main-content">
-            <div id="empty-favorites" class="empty-state">
-                <div class="empty-icon">❤️</div>
-                <h3>Nenhum favorito ainda</h3>
-                <p>Adicione templates aos seus favoritos para encontrá-los facilmente</p>
-                <button class="continue-shopping-btn">Explorar Templates</button>
-            </div>
-
+        <div class="favorites-content">
             <div id="favorites-grid" class="products-grid">
                 <!-- Favorite products will be loaded here -->
             </div>
-        </div>
-    </div>
 
-    <!-- Checkout Modal -->
-    <div id="checkout-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Finalizar Compra</h2>
-                <button class="modal-close">×</button>
-            </div>
-            <div class="modal-body">
-                <form id="checkout-form">
-                    <div class="form-group">
-                        <label for="customer-name">Nome Completo</label>
-                        <input type="text" id="customer-name" name="customer-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="customer-email">E-mail</label>
-                        <input type="email" id="customer-email" name="customer-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="customer-phone">Telefone</label>
-                        <input type="tel" id="customer-phone" name="customer-phone" required>
-                    </div>
-
-                    <div class="order-summary">
-                        <h3>Resumo do Pedido</h3>
-                        <div id="checkout-items">
-                            <!-- Order items will be loaded here -->
-                        </div>
-                        <div class="total-checkout">
-                            Total: <span id="checkout-total">$0.00</span>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="submit-order-btn">
-                        <span class="btn-icon">✓</span>
-                        Confirmar Pedido
-                    </button>
-                </form>
+            <div id="empty-favorites-state" class="empty-state">
+                <div class="empty-icon">❤️</div>
+                <h3>Nenhum favorito ainda</h3>
+                <p>Adicione templates aos seus favoritos</p>
+                <button class="continue-btn">Explorar Templates</button>
             </div>
         </div>
     </div>
