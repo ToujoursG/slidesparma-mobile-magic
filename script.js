@@ -261,18 +261,71 @@ function loadFavoritesPage() {
         return;
     }
     
-    // Buscar produtos favoritos
-    const allProducts = document.querySelectorAll('.product-card');
+    // Dados dos produtos
+    const products = [
+        {
+            id: 'business-pro',
+            category: 'business',
+            title: 'Business Pro',
+            description: 'Apresentações profissionais para negócios',
+            price: '$29.99',
+            image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop&crop=center'
+        },
+        {
+            id: 'corporate-elite',
+            category: 'business',
+            title: 'Corporate Elite',
+            description: 'Templates corporativos premium',
+            price: '$39.99',
+            image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&crop=center'
+        },
+        {
+            id: 'startup-pitch',
+            category: 'business',
+            title: 'Startup Pitch',
+            description: 'Apresentações para startups',
+            price: '$44.99',
+            image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=center'
+        },
+        {
+            id: 'education-template',
+            category: 'education',
+            title: 'Education Pro',
+            description: 'Templates para apresentações educacionais',
+            price: '$24.99',
+            image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop&crop=center'
+        },
+        {
+            id: 'creative-design',
+            category: 'creative',
+            title: 'Creative Master',
+            description: 'Templates criativos e inovadores',
+            price: '$34.99',
+            image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=250&fit=crop&crop=center'
+        }
+    ];
+    
+    // Criar HTML dos produtos favoritos
     let favoritesHTML = '';
     
-    allProducts.forEach(product => {
-        const productId = product.querySelector('.favorite-btn').getAttribute('data-product-id');
-        
-        if (favorites.includes(productId)) {
-            const productHTML = product.outerHTML;
-            // Modificar o botão de favorito para mostrar como favoritado
-            const modifiedHTML = productHTML.replace('♡', '♥').replace('data-product-id', 'class="favorite-btn favorited" data-product-id');
-            favoritesHTML += modifiedHTML;
+    products.forEach(product => {
+        if (favorites.includes(product.id)) {
+            favoritesHTML += `
+                <div class="product-card" data-category="${product.category}">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.title}">
+                        <button class="favorite-btn favorited" data-product-id="${product.id}">♥</button>
+                    </div>
+                    <div class="product-info">
+                        <h4>${product.title}</h4>
+                        <p>${product.description}</p>
+                        <div class="product-footer">
+                            <span class="price">${product.price}</span>
+                            <button class="details-btn">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
     });
     
