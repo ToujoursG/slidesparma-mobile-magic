@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -84,10 +85,10 @@
             <!-- Products Grid -->
             <section class="products-grid">
                 <!-- Business Pro -->
-                <div class="product-card">
+                <div class="product-card" data-category="business">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop&crop=center" alt="Business Pro Dashboard">
-                        <button class="favorite-btn">♡</button>
+                        <button class="favorite-btn" data-product-id="business-pro">♡</button>
                     </div>
                     <div class="product-info">
                         <h4>Business Pro</h4>
@@ -100,10 +101,10 @@
                 </div>
                 
                 <!-- Corporate Elite -->
-                <div class="product-card">
+                <div class="product-card" data-category="business">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&crop=center" alt="Corporate Elite Meeting">
-                        <button class="favorite-btn">♡</button>
+                        <button class="favorite-btn" data-product-id="corporate-elite">♡</button>
                     </div>
                     <div class="product-info">
                         <h4>Corporate Elite</h4>
@@ -116,10 +117,10 @@
                 </div>
                 
                 <!-- Startup Pitch -->
-                <div class="product-card">
+                <div class="product-card" data-category="business">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=center" alt="Startup Pitch">
-                        <button class="favorite-btn">♡</button>
+                        <button class="favorite-btn" data-product-id="startup-pitch">♡</button>
                     </div>
                     <div class="product-info">
                         <h4>Startup Pitch</h4>
@@ -130,24 +131,73 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Education Template -->
+                <div class="product-card" data-category="education">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop&crop=center" alt="Education Template">
+                        <button class="favorite-btn" data-product-id="education-template">♡</button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Education Pro</h4>
+                        <p>Templates para apresentações educacionais</p>
+                        <div class="product-footer">
+                            <span class="price">$24.99</span>
+                            <button class="details-btn">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative Design -->
+                <div class="product-card" data-category="creative">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=250&fit=crop&crop=center" alt="Creative Design">
+                        <button class="favorite-btn" data-product-id="creative-design">♡</button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Creative Master</h4>
+                        <p>Templates criativos e inovadores</p>
+                        <div class="product-footer">
+                            <span class="price">$34.99</span>
+                            <button class="details-btn">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
         
         <!-- Bottom Navigation -->
         <nav class="bottom-nav">
-            <button class="nav-item active">
+            <button class="nav-item active" data-nav="home">
                 <span class="nav-icon">🏠</span>
             </button>
-            <button class="nav-item">
+            <button class="nav-item" data-nav="cart">
                 <span class="nav-icon">🛒</span>
             </button>
-            <button class="nav-item">
+            <button class="nav-item" data-nav="favorites">
                 <span class="nav-icon">💚</span>
+                <span class="favorites-count">0</span>
             </button>
         </nav>
+    </div>
+
+    <!-- Favorites Page -->
+    <div id="favorites-page" class="page">
+        <header class="header">
+            <button class="back-button" id="back-from-favorites">←</button>
+            <div class="logo">Meus Favoritos</div>
+        </header>
+        
+        <main class="main-content">
+            <div id="favorites-grid" class="products-grid">
+                <div class="empty-favorites">
+                    <p>Nenhum produto favoritado ainda</p>
+                    <p>Explore nossos templates e adicione seus favoritos!</p>
+                </div>
+            </div>
+        </main>
     </div>
     
     <script src="script.js"></script>
 </body>
 </html>
-
