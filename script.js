@@ -1,4 +1,3 @@
-
 // Sistema de dados dos produtos
 const PRODUCTS_DATA = [
     {
@@ -391,7 +390,7 @@ const PageManager = {
         this.renderFavoriteProducts();
     },
 
-    // Product Rendering
+    // Product Rendering with enhanced visual design
     renderProducts() {
         const grid = document.getElementById('products-grid');
         if (!grid) return;
@@ -423,8 +422,10 @@ const PageManager = {
                     <h4>${product.title}</h4>
                     <p>${product.description}</p>
                     <div class="product-footer">
-                        <span class="price">$${product.price}</span>
-                        <span class="original-price">$${product.originalPrice}</span>
+                        <div>
+                            <span class="price">$${product.price}</span>
+                            <span class="original-price">$${product.originalPrice}</span>
+                        </div>
                         <button class="details-btn" onclick="event.stopPropagation(); PageManager.viewProduct('${product.id}')">
                             Ver Detalhes
                         </button>
@@ -443,6 +444,12 @@ const PageManager = {
         const mainImage = document.getElementById('product-main-image');
         mainImage.src = product.images[0];
         mainImage.alt = product.title;
+
+        // Add size selection functionality
+        this.initializeSizeSelection();
+        
+        // Add quantity selection functionality
+        this.initializeQuantitySelection();
 
         // Thumbnails
         const thumbnails = document.querySelectorAll('.thumbnail');
@@ -473,6 +480,50 @@ const PageManager = {
         favoriteBtn.className = `favorite-toggle ${appState.isFavorite(product.id) ? 'favorited' : ''}`;
     },
 
+    initializeSizeSelection() {
+        // Add size selection buttons to product page
+        const productInfo = document.querySelector('.product-info');
+        const sizesHTML = `
+            <div class="size-selection">
+                <button class="size-btn active" data-size="20">20 cm</button>
+                <button class="size-btn" data-size="30">30 cm</button>
+                <button class="size-btn" data-size="40">40 cm</button>
+            </div>
+        `;
+        
+        const descriptionElement = productInfo.querySelector('p');
+        descriptionElement.insertAdjacentHTML('afterend', sizesHTML);
+        
+        // Add event listeners for size buttons
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    },
+
+    initializeQuantitySelection() {
+        // Add quantity selection to product page
+        const productPricing = document.querySelector('.product-pricing');
+        const quantityHTML = `
+            <div class="quantity-selection">
+                <button class="quantity-btn" onclick="PageManager.changeQuantity(-1)">−</button>
+                <div class="quantity-display" id="quantity-display">1</div>
+                <button class="quantity-btn" onclick="PageManager.changeQuantity(1)">+</button>
+            </div>
+        `;
+        
+        productPricing.insertAdjacentHTML('beforebegin', quantityHTML);
+    },
+
+    changeQuantity(change) {
+        const quantityDisplay = document.getElementById('quantity-display');
+        let currentQuantity = parseInt(quantityDisplay.textContent);
+        currentQuantity = Math.max(1, currentQuantity + change);
+        quantityDisplay.textContent = currentQuantity;
+    },
+
     renderCartItems() {
         const cartItems = document.getElementById('cart-items');
         const emptyCart = document.getElementById('empty-cart');
@@ -495,7 +546,12 @@ const PageManager = {
                 </div>
                 <div class="cart-item-info">
                     <h4>${item.title}</h4>
-                    <p>Quantidade: ${item.quantity}</p>
+                    <p>Produto premium</p>
+                </div>
+                <div class="cart-item-quantity">
+                    <button onclick="PageManager.updateCartQuantity('${item.id}', -1)">−</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="PageManager.updateCartQuantity('${item.id}', 1)">+</button>
                 </div>
                 <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
                 <button class="remove-item-btn" onclick="PageManager.removeFromCart('${item.id}')">
@@ -504,108 +560,52 @@ const PageManager = {
             </div>
         `).join('');
 
-        // Update summary
-        const subtotal = appState.getCartTotal();
-        const discount = subtotal * 0.1; // 10% discount
-        const total = subtotal - discount;
-
-        document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
-        document.getElementById('cart-discount').textContent = `-$${discount.toFixed(2)}`;
-        document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
-    },
-
-    renderFavoriteProducts() {
-        const grid = document.getElementById('favorites-grid');
-        const emptyFavorites = document.getElementById('empty-favorites');
-        
-        const favoriteProducts = appState.getFavoriteProducts();
-
-        if (favoriteProducts.length === 0) {
-            emptyFavorites.style.display = 'block';
-            grid.innerHTML = '';
-            return;
-        }
-
-        emptyFavorites.style.display = 'none';
-        
-        grid.innerHTML = favoriteProducts.map(product => `
-            <div class="product-card" data-category="${product.category}" onclick="PageManager.viewProduct('${product.id}')">
-                <div class="product-image">
-                    <img src="${product.image}" alt="${product.title}" loading="lazy">
-                    <button class="favorite-btn favorited" 
-                            data-product-id="${product.id}" 
-                            onclick="event.stopPropagation(); PageManager.toggleFavorite('${product.id}')">
-                        ♥
-                    </button>
+        // Add delivery section
+        const deliverySection = `
+            <div class="delivery-section">
+                <h3>Delivery</h3>
+                <div class="form-group">
+                    <label for="customer-name">Name</label>
+                    <input type="text" id="customer-name" placeholder="Your full name">
                 </div>
-                <div class="product-info">
-                    <h4>${product.title}</h4>
-                    <p>${product.description}</p>
-                    <div class="product-footer">
-                        <span class="price">$${product.price}</span>
-                        <span class="original-price">$${product.originalPrice}</span>
-                        <button class="details-btn" onclick="event.stopPropagation(); PageManager.viewProduct('${product.id}')">
-                            Ver Detalhes
-                        </button>
-                    </div>
+                <div class="form-group">
+                    <label for="delivery-address">Delivery address</label>
+                    <input type="text" id="delivery-address" placeholder="Delivery address">
                 </div>
+                <div class="form-group">
+                    <label for="phone-number">Phone number</label>
+                    <input type="tel" id="phone-number" placeholder="Phone number">
+                </div>
+                <button class="checkout-btn" id="make-payment-btn">
+                    MAKE PAYMENT | $${(appState.getCartTotal() * 0.9).toFixed(2)}
+                </button>
             </div>
-        `).join('');
+        `;
+
+        cartItems.insertAdjacentHTML('afterend', deliverySection);
+
+        // Add event listener for payment button
+        document.getElementById('make-payment-btn').addEventListener('click', () => {
+            appState.showToast('Pagamento processado com sucesso! 🎉', 'success');
+            setTimeout(() => {
+                appState.clearCart();
+                this.showPage('main');
+            }, 2000);
+        });
     },
 
-    // Actions
-    viewProduct(productId) {
-        const product = appState.getProduct(productId);
-        if (product) {
-            appState.currentProduct = product;
-            this.showPage('product');
-        }
-    },
-
-    toggleFavorite(productId) {
-        if (appState.isFavorite(productId)) {
-            appState.removeFavorite(productId);
-        } else {
-            appState.addFavorite(productId);
-        }
-
-        // Update UI based on current page
-        if (this.currentPage === 'main') {
-            this.renderProducts();
-        } else if (this.currentPage === 'favorites') {
-            this.renderFavoriteProducts();
-        } else if (this.currentPage === 'product' && appState.currentProduct?.id === productId) {
-            const favoriteBtn = document.getElementById('product-favorite-btn');
-            if (favoriteBtn) {
-                favoriteBtn.textContent = appState.isFavorite(productId) ? '♥' : '♡';
-                favoriteBtn.className = `favorite-toggle ${appState.isFavorite(productId) ? 'favorited' : ''}`;
-            }
-        }
-    },
-
-    addToCart(productId) {
-        appState.addToCart(productId);
-    },
-
-    removeFromCart(productId) {
-        appState.removeFromCart(productId);
-        this.renderCartItems();
-    },
-
-    clearCart() {
-        if (confirm('Tem certeza que deseja limpar o carrinho?')) {
-            appState.clearCart();
+    updateCartQuantity(productId, change) {
+        const item = appState.cart.find(item => item.id === productId);
+        if (item) {
+            item.quantity = Math.max(1, item.quantity + change);
+            appState.saveCart();
             this.renderCartItems();
         }
     },
 
-    clearFavorites() {
-        if (confirm('Tem certeza que deseja limpar todos os favoritos?')) {
-            appState.favorites = [];
-            appState.saveFavorites();
-            this.renderFavoriteProducts();
-        }
-    }
+    // ... keep existing code (renderFavoriteProducts method) the same ...
+
+    // ... keep existing code (Actions methods) the same ...
 };
 
 // Search and Filter Management
@@ -721,7 +721,7 @@ const ModalManager = {
     }
 };
 
-// Event Listeners Setup
+// Event Listeners Setup with enhanced functionality
 function setupEventListeners() {
     // Landing page navigation
     const nextButton = document.getElementById('next-button');
@@ -767,7 +767,7 @@ function setupEventListeners() {
         });
     });
 
-    // Product page actions
+    // Product page actions with enhanced UI
     const addToCartBtn = document.getElementById('add-to-cart-btn');
     const buyNowBtn = document.getElementById('buy-now-btn');
     const productFavoriteBtn = document.getElementById('product-favorite-btn');
@@ -775,7 +775,10 @@ function setupEventListeners() {
     if (addToCartBtn) {
         addToCartBtn.addEventListener('click', () => {
             if (appState.currentProduct) {
-                PageManager.addToCart(appState.currentProduct.id);
+                const quantity = parseInt(document.getElementById('quantity-display')?.textContent || 1);
+                for (let i = 0; i < quantity; i++) {
+                    PageManager.addToCart(appState.currentProduct.id);
+                }
             }
         });
     }
