@@ -15,8 +15,9 @@ body {
     background: linear-gradient(135deg, #0F0F23 0%, #1a1a2e 50%, #16213e 100%);
     color: #ffffff;
     overflow-x: hidden;
+    overflow-y: auto;  /* garante scroll se necessário */
     min-height: 100vh;
-    padding-bottom: 80px;
+    padding-bottom: 80px !important;
 }
 
 /* Typography */
@@ -941,7 +942,10 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(20px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 100;
+    overflow: hidden;
+    box-sizing: border-box;
 }
+
 
 .glass-nav {
     display: flex;
@@ -949,7 +953,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     gap: 2rem;
     padding: 0 2rem;
-    height: 20%;
+    height: 10%;
 }
 
 .nav-item {
