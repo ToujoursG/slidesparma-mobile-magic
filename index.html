@@ -4,165 +4,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlidesParma - Templates Premium</title>
+    <title>SlidesParma - Premium Templates</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#0F0F23">
 </head>
 <body>
     <!-- Landing Page -->
     <div id="landing-page" class="page active">
+        <div class="animated-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="floating-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+        
         <div class="landing-container">
-            <div class="hero-circles">
-                <div class="hero-circle">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=400&fit=crop&crop=center" alt="Business Templates">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Templates Premium</span>
                 </div>
-                <div class="hero-circle">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=400&fit=crop&crop=center" alt="Education Templates">
+                
+                <h1 class="hero-title">
+                    <span class="title-line">Transforme suas</span>
+                    <span class="title-line gradient-text">Apresentações</span>
+                    <span class="title-line">em Obras de Arte</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Descubra nossa coleção exclusiva de templates premium para PowerPoint e Google Slides. 
+                    Designs únicos, modernos e totalmente personalizáveis para profissionais exigentes.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Templates</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50k+</div>
+                        <div class="stat-label">Downloads</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9★</div>
+                        <div class="stat-label">Avaliação</div>
+                    </div>
                 </div>
-                <div class="hero-circle">
-                    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=400&fit=crop&crop=center" alt="Creative Templates">
+                
+                <div class="hero-actions">
+                    <button id="start-btn" class="primary-btn">
+                        <span>Explorar Templates</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="secondary-btn">
+                        <i class="fas fa-play"></i>
+                        <span>Assistir Demo</span>
+                    </button>
                 </div>
             </div>
-            <div class="hero-content-box">
-                <h1>Templates Profissionais para Apresentações</h1>
-                <p>Descubra nossa coleção exclusiva de templates premium para PowerPoint e Google Slides. Designs modernos, profissionais e totalmente personalizáveis.</p>
-                <button id="start-btn" class="red-button">Explorar Templates</button>
+            
+            <div class="hero-visual">
+                <div class="template-showcase">
+                    <div class="template-card floating">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=200&fit=crop" alt="Business Template">
+                        <div class="template-overlay">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="template-card floating delay-1">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&h=200&fit=crop" alt="Corporate Template">
+                        <div class="template-overlay">
+                            <i class="fas fa-building"></i>
+                        </div>
+                    </div>
+                    <div class="template-card floating delay-2">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300&h=200&fit=crop" alt="Education Template">
+                        <div class="template-overlay">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-icon">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
     </div>
 
     <!-- Main Page -->
     <div id="main-page" class="page">
-        <header class="header">
-            <button id="back-btn" class="back-arrow">←</button>
-            <h1 class="header-title">SlidesParma</h1>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Buscar templates..." class="search-input">
+        <header class="glass-header">
+            <div class="header-content">
+                <button id="back-btn" class="glass-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="logo">
+                    <i class="fas fa-layer-group"></i>
+                    <span>SlidesParma</span>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Buscar templates..." />
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="glass-btn notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <div class="notification-dot"></div>
+                    </button>
+                    <div class="avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User">
+                    </div>
+                </div>
             </div>
         </header>
 
         <main class="main-content">
-            <div class="promo-banner">
-                <div class="banner-text">
-                    <h2>Templates Gratuitos</h2>
-                    <p>Baixe alguns templates gratuitos para testar nossa qualidade</p>
-                </div>
-                <div class="banner-right">
-                    <button class="banner-btn">Baixar Grátis</button>
-                    <div class="banner-image">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=100&h=100&fit=crop&crop=center" alt="Free">
+            <div class="promo-section">
+                <div class="promo-card premium-gradient">
+                    <div class="promo-content">
+                        <div class="promo-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>Oferta Especial</span>
+                        </div>
+                        <h2>Templates Gratuitos</h2>
+                        <p>Baixe 3 templates premium gratuitamente para testar nossa qualidade excepcional</p>
+                        <button class="promo-btn">
+                            <i class="fas fa-download"></i>
+                            <span>Baixar Agora</span>
+                        </button>
+                    </div>
+                    <div class="promo-visual">
+                        <div class="gift-box">
+                            <i class="fas fa-gift"></i>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="categories">
-                <h3>Categorias</h3>
-                <div class="category-pills">
-                    <button class="pill active" data-category="all">📊 Todos</button>
-                    <button class="pill" data-category="business">💼 Negócios</button>
-                    <button class="pill" data-category="education">🎓 Educação</button>
-                    <button class="pill" data-category="creative">🎨 Criativo</button>
+            <div class="categories-section">
+                <div class="section-header">
+                    <h3>Categorias</h3>
+                    <button class="view-all-btn">
+                        <span>Ver Todas</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="category-grid">
+                    <button class="category-card active" data-category="all">
+                        <div class="category-icon">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <span>Todos</span>
+                        <div class="category-count">120</div>
+                    </button>
+                    <button class="category-card" data-category="business">
+                        <div class="category-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <span>Negócios</span>
+                        <div class="category-count">45</div>
+                    </button>
+                    <button class="category-card" data-category="education">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span>Educação</span>
+                        <div class="category-count">32</div>
+                    </button>
+                    <button class="category-card" data-category="creative">
+                        <div class="category-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <span>Criativo</span>
+                        <div class="category-count">43</div>
+                    </button>
                 </div>
             </div>
 
-            <div id="products-grid" class="products-grid">
-                <!-- Products will be loaded here -->
+            <div class="products-section">
+                <div class="section-header">
+                    <h3>Templates Premium</h3>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="products-grid" class="products-grid">
+                    <!-- Products will be loaded here -->
+                </div>
             </div>
         </main>
 
-        <nav class="bottom-nav">
-            <button class="nav-btn active" data-nav="home">
-                <span class="nav-icon">🏠</span>
+        <nav class="bottom-nav glass-nav">
+            <button class="nav-item active" data-nav="home">
+                <div class="nav-icon">
+                    <i class="fas fa-home"></i>
+                </div>
                 <span class="nav-label">Início</span>
             </button>
-            <button class="nav-btn" data-nav="cart">
-                <span class="nav-icon">🛒</span>
+            <button class="nav-item" data-nav="cart">
+                <div class="nav-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="nav-badge" id="cart-badge">0</div>
+                </div>
                 <span class="nav-label">Carrinho</span>
-                <span class="cart-badge">0</span>
             </button>
-            <button class="nav-btn" data-nav="favorites">
-                <span class="nav-icon">❤️</span>
+            <button class="nav-item" data-nav="favorites">
+                <div class="nav-icon">
+                    <i class="fas fa-heart"></i>
+                    <div class="nav-badge" id="fav-badge">0</div>
+                </div>
                 <span class="nav-label">Favoritos</span>
-                <span class="fav-badge">0</span>
+            </button>
+            <button class="nav-item" data-nav="profile">
+                <div class="nav-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="nav-label">Perfil</span>
             </button>
         </nav>
     </div>
 
     <!-- Product Details Page -->
     <div id="product-page" class="page">
-        <header class="header">
-            <button id="back-from-product" class="back-arrow">←</button>
-            <h1 class="header-title">Detalhes</h1>
-            <button id="fav-toggle" class="fav-heart">♡</button>
+        <header class="glass-header">
+            <div class="header-content">
+                <button id="back-from-product" class="glass-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="logo">Detalhes</div>
+                <div class="header-actions">
+                    <button id="share-btn" class="glass-btn">
+                        <i class="fas fa-share"></i>
+                    </button>
+                    <button id="fav-toggle" class="glass-btn favorite-btn">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
         </header>
 
         <div class="product-detail-content">
-            <div class="product-image-main">
-                <img id="main-product-image" src="" alt="" class="main-image">
-            </div>
-            
-            <div class="product-thumbnails">
-                <img class="thumb active" src="" alt="">
-                <img class="thumb" src="" alt="">
-                <img class="thumb" src="" alt="">
-            </div>
-
-            <div class="product-info-section">
-                <h1 id="product-name">Nome do Produto</h1>
-                <p id="product-desc">Descrição do produto</p>
-
-                <div class="size-options">
-                    <button class="size-btn active">20 cm</button>
-                    <button class="size-btn">30 cm</button>
-                    <button class="size-btn">40 cm</button>
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <img id="main-product-image" src="" alt="" class="main-product-image">
+                    <div class="image-overlay">
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
                 </div>
+                
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-scroll">
+                        <img class="thumbnail active" src="" alt="">
+                        <img class="thumbnail" src="" alt="">
+                        <img class="thumbnail" src="" alt="">
+                        <img class="thumbnail" src="" alt="">
+                    </div>
+                </div>
+            </div>
 
-                <div class="quantity-selector">
-                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
-                    <span class="qty-display" id="qty">1</span>
-                    <button class="qty-btn" onclick="changeQty(1)">+</button>
+            <div class="product-info">
+                <div class="product-badges">
+                    <span class="badge premium">Premium</span>
+                    <span class="badge new">Novo</span>
+                </div>
+                
+                <h1 id="product-name" class="product-title">Nome do Produto</h1>
+                <p id="product-desc" class="product-description">Descrição detalhada do produto</p>
+
+                <div class="product-stats">
+                    <div class="stat">
+                        <i class="fas fa-download"></i>
+                        <span>1.2k downloads</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.9 (234 reviews)</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-file-powerpoint"></i>
+                        <span>PowerPoint & Google Slides</span>
+                    </div>
                 </div>
 
                 <div class="price-section">
-                    <span class="price" id="product-price">$0.00</span>
+                    <div class="price-info">
+                        <span class="current-price" id="product-price">$29.99</span>
+                        <span class="original-price">$49.99</span>
+                        <span class="discount-badge">40% OFF</span>
+                    </div>
                 </div>
 
-                <button id="add-to-cart" class="add-cart-btn">
-                    ADICIONAR AO CARRINHO
-                </button>
+                <div class="product-options">
+                    <div class="option-group">
+                        <label>Formato:</label>
+                        <div class="format-options">
+                            <button class="format-btn active">
+                                <i class="fas fa-file-powerpoint"></i>
+                                <span>PowerPoint</span>
+                            </button>
+                            <button class="format-btn">
+                                <i class="fab fa-google"></i>
+                                <span>Google Slides</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <label>Licença:</label>
+                        <div class="license-options">
+                            <button class="license-btn active">
+                                <span>Pessoal</span>
+                                <small>Uso individual</small>
+                            </button>
+                            <button class="license-btn">
+                                <span>Comercial</span>
+                                <small>Uso empresarial</small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="add-to-cart" class="primary-btn full-width">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Adicionar ao Carrinho</span>
+                    </button>
+                    <button class="secondary-btn full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>Prévia Gratuita</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Cart Page -->
     <div id="cart-page" class="page">
-        <header class="header">
-            <button id="back-from-cart" class="back-arrow">←</button>
-            <h1 class="header-title">Meu Carrinho</h1>
-            <button id="clear-cart" class="clear-btn">🗑️</button>
+        <header class="glass-header">
+            <div class="header-content">
+                <button id="back-from-cart" class="glass-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="logo">Meu Carrinho</div>
+                <div class="header-actions">
+                    <button id="clear-cart" class="glass-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
         </header>
 
         <div class="cart-content">
-            <div id="cart-items-container">
+            <div id="cart-items-container" class="cart-items">
                 <!-- Cart items will be loaded here -->
             </div>
 
             <div id="empty-cart-state" class="empty-state">
-                <div class="empty-icon">🛒</div>
+                <div class="empty-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
                 <h3>Seu carrinho está vazio</h3>
-                <p>Adicione alguns templates incríveis</p>
-                <button class="continue-btn">Continuar Comprando</button>
+                <p>Adicione alguns templates incríveis e comece a criar apresentações extraordinárias</p>
+                <button class="primary-btn continue-shopping">
+                    <span>Continuar Comprando</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
 
-            <div class="delivery-form">
-                <h3>Delivery</h3>
-                <input type="text" placeholder="Name" class="form-input">
-                <input type="text" placeholder="Delivery address" class="form-input">
-                <input type="tel" placeholder="Phone number" class="form-input">
-                <button id="payment-btn" class="payment-btn">
-                    MAKE PAYMENT | $0.00
+            <div class="cart-summary glass-card">
+                <div class="summary-header">
+                    <h3>Resumo do Pedido</h3>
+                </div>
+                
+                <div class="summary-details">
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Desconto</span>
+                        <span id="discount" class="discount-text">-$0.00</span>
+                    </div>
+                    <div class="summary-line total">
+                        <span>Total</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="promo-code">
+                    <div class="promo-input">
+                        <input type="text" placeholder="Código promocional" id="promo-input">
+                        <button class="apply-promo-btn">Aplicar</button>
+                    </div>
+                </div>
+
+                <button id="checkout-btn" class="primary-btn full-width">
+                    <i class="fas fa-lock"></i>
+                    <span>Finalizar Compra</span>
                 </button>
             </div>
         </div>
@@ -170,10 +430,18 @@
 
     <!-- Favorites Page -->
     <div id="favorites-page" class="page">
-        <header class="header">
-            <button id="back-from-favorites" class="back-arrow">←</button>
-            <h1 class="header-title">Favoritos</h1>
-            <button id="clear-favorites" class="clear-btn">🗑️</button>
+        <header class="glass-header">
+            <div class="header-content">
+                <button id="back-from-favorites" class="glass-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="logo">Favoritos</div>
+                <div class="header-actions">
+                    <button id="clear-favorites" class="glass-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
         </header>
 
         <div class="favorites-content">
@@ -182,10 +450,15 @@
             </div>
 
             <div id="empty-favorites-state" class="empty-state">
-                <div class="empty-icon">❤️</div>
+                <div class="empty-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
                 <h3>Nenhum favorito ainda</h3>
-                <p>Adicione templates aos seus favoritos</p>
-                <button class="continue-btn">Explorar Templates</button>
+                <p>Salve seus templates preferidos aqui para acesso rápido</p>
+                <button class="primary-btn continue-shopping">
+                    <span>Explorar Templates</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
         </div>
     </div>
