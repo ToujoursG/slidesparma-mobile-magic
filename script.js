@@ -8,75 +8,15 @@ class SlidesParmaApp {
         this.products = [
             {
                 id: 1,
-                title: 'Business Pro Template',
-                description: 'Apresentações profissionais modernas para negócios',
+                title: 'Tiba Slides AAABBBCCC',
+                description: 'Apresentação do tiba',
                 price: 24.32,
                 originalprice: 67.54,
                 desconto: '23% OFF',
-                image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop',
+                image: 'https://th.bing.com/th/id/R.baa9f0fe98561436811444335f6ffbc3?rik=ZgOi2BNrpuX0GQ&pid=ImgRaw&r=0',
                 category: 'business',
                 badges: ['premium', 'new']
             },
-            {
-                id: 2,
-                title: 'Corporate Elite',
-                description: 'Templates corporativos de alta qualidade',
-                price: 39.99,
-                originalPrice: 59.99,
-                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop',
-                category: 'business',
-                badges: ['premium']
-            },
-            {
-                id: 3,
-                title: 'Startup Pitch Deck',
-                description: 'Apresentações impactantes para startups',
-                price: 34.99,
-                originalPrice: 54.99,
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop',
-                category: 'business',
-                badges: ['premium', 'new']
-            },
-            {
-                id: 4,
-                title: 'Education Master',
-                description: 'Templates educacionais envolventes',
-                price: 24.99,
-                originalPrice: 39.99,
-                image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop',
-                category: 'education',
-                badges: ['premium']
-            },
-            {
-                id: 5,
-                title: 'Creative Portfolio',
-                description: 'Designs criativos e inovadores',
-                price: 44.99,
-                originalPrice: 69.99,
-                image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=250&fit=crop',
-                category: 'creative',
-                badges: ['premium', 'new']
-            },
-            {
-                id: 6,
-                title: 'Modern Minimal',
-                description: 'Estilo minimalista e elegante',
-                price: 32.99,
-                originalPrice: 49.99,
-                image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop',
-                category: 'creative',
-                badges: ['premium']
-            },
-            {
-                id: 7,
-                title: 'Tiba',
-                description: 'tiba tiba tiba tiba tiba tiba',
-                price: 32.99,
-                originalPrice: 49.99,
-                image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop',
-                category: 'creative',
-                badges: ['premium']
-            }
         ];
         
         this.currentCategory = 'all';
