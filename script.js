@@ -1,44 +1,31 @@
 
-/**
- * SLIDESPARMA - COMPETITION-GRADE JAVASCRIPT
- * Ultra-optimized for global competition excellence
- * Performance, elegance, and user experience perfection
- */
-
 // Modern JavaScript with ES6+ features for optimal performance
 class SlidesParmaApp {
     constructor() {
         this.currentPage = 'landing';
         this.cart = JSON.parse(localStorage.getItem('slidesparma_cart')) || [];
         this.favorites = JSON.parse(localStorage.getItem('slidesparma_favorites')) || [];
-        
-        // Enhanced product data with competition-grade content
         this.products = [
             {
                 id: 1,
-                title: 'Business Pro Elite',
-                description: 'Apresentações profissionais de nível executivo com design sofisticado e moderno',
-                price: 39.99,
-                originalPrice: 69.99,
-                image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop&auto=format&q=80',
+                title: 'Business Pro Template',
+                description: 'Apresentações profissionais modernas para negócios',
+                price: 24.32,
+                originalprice: 67.54,
+                desconto: '23% OFF',
+                image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop',
                 category: 'business',
-                badges: ['premium', 'new'],
-                downloads: 2847,
-                rating: 4.9,
-                reviews: 312
+                badges: ['premium', 'new']
             },
             {
                 id: 2,
-                title: 'Corporate Mastery',
-                description: 'Coleção premium de templates corporativos para empresas Fortune 500',
-                price: 49.99,
-                originalPrice: 89.99,
-                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&auto=format&q=80',
+                title: 'Corporate Elite',
+                description: 'Templates corporativos de alta qualidade',
+                price: 39.99,
+                originalPrice: 59.99,
+                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop',
                 category: 'business',
-                badges: ['premium'],
-                downloads: 3621,
-                rating: 4.8,
-                reviews: 289
+                badges: ['premium']
             },
             {
                 id: 3,
@@ -79,39 +66,31 @@ class SlidesParmaApp {
                 image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop',
                 category: 'creative',
                 badges: ['premium']
+            },
+            {
+                id: 7,
+                title: 'Tiba',
+                description: 'tiba tiba tiba tiba tiba tiba',
+                price: 32.99,
+                originalPrice: 49.99,
+                image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop',
+                category: 'creative',
+                badges: ['premium']
             }
         ];
         
         this.currentCategory = 'all';
         this.currentProduct = null;
         
-        
-        this.currentCategory = 'all';
-        this.currentProduct = null;
-        this.isLoading = false;
-        this.searchDebounceTimer = null;
-        
-        // Performance monitoring
-        this.performanceMetrics = {
-            startTime: performance.now(),
-            loadEvents: []
-        };
-        
         this.init();
     }
 
     init() {
-        this.showLoadingIndicator();
         this.setupEventListeners();
         this.updateCartBadge();
         this.updateFavoritesBadge();
         this.loadProducts();
         this.setupIntersectionObserver();
-        this.setupPerformanceMonitoring();
-        this.hideLoadingIndicator();
-        
-        // Register service worker for enhanced performance
-        this.registerServiceWorker();
     }
 
     setupEventListeners() {
@@ -160,14 +139,11 @@ class SlidesParmaApp {
             });
         });
 
-        // Enhanced search with debouncing
+        // Search functionality
         const searchInput = document.getElementById('search-input');
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
-                clearTimeout(this.searchDebounceTimer);
-                this.searchDebounceTimer = setTimeout(() => {
-                    this.searchProducts(e.target.value);
-                }, 300);
+                this.searchProducts(e.target.value);
             });
         }
 
@@ -240,48 +216,6 @@ class SlidesParmaApp {
 
         // Call initially and after loading products
         setTimeout(observeElements, 100);
-    }
-    
-    setupPerformanceMonitoring() {
-        // Monitor Core Web Vitals
-        if ('web-vital' in window) {
-            const reportMetric = (metric) => {
-                console.log(`${metric.name}: ${metric.value}`);
-                // Send to analytics in production
-            };
-            
-            window.webVitals.getCLS(reportMetric);
-            window.webVitals.getFID(reportMetric);
-            window.webVitals.getLCP(reportMetric);
-        }
-    }
-    
-    registerServiceWorker() {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('Service Worker registered successfully');
-                })
-                .catch(error => {
-                    console.log('Service Worker registration failed');
-                });
-        }
-    }
-    
-    showLoadingIndicator() {
-        const indicator = document.getElementById('loading-indicator');
-        if (indicator) {
-            indicator.style.display = 'flex';
-        }
-    }
-    
-    hideLoadingIndicator() {
-        const indicator = document.getElementById('loading-indicator');
-        if (indicator) {
-            setTimeout(() => {
-                indicator.style.display = 'none';
-            }, 300);
-        }
     }
 
     navigateToPage(pageName) {
@@ -431,7 +365,9 @@ class SlidesParmaApp {
         // Update product details
         document.getElementById('product-name').textContent = product.title;
         document.getElementById('product-desc').textContent = product.description;
-        document.getElementById('product-price').textContent = `$${product.price}`;
+        document.getElementById('product-price').textContent = `R$${product.price}`;
+        document.getElementById('product-original-price').textContent = `R$${product.originalprice}`;
+        document.getElementById('product-desconto').textContent = `R$${product.desconto}`;
         
         // Update main image
         const mainImage = document.getElementById('main-product-image');
